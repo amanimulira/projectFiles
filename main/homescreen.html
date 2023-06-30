@@ -17,6 +17,16 @@
       justify-content: flex-start;
       padding: 10px;
     }
+      @keyframes blink {
+      0% {
+        background-color: #fff;
+            color: #000;
+      }
+      50% {
+        background-color: #000;
+        color: #fff;
+      }
+    }
     
     .back-button {
       margin-right: 10px;
@@ -83,9 +93,7 @@
 <body>
 
 
-   <div id="overlay">
-  <a href="#" onclick="startApp()">[ Press to Go Back ]</a>
-  </div>
+  
   
   <h1>Project Folders</h1>
   
@@ -102,6 +110,10 @@
       <i class="fas fa-folder"></i>
       Folder 3
     </a>
+  </div>
+
+   <div id="overlay">
+  <a href="#" onclick="startApp()">[ Press to Go Back ]</a>
   </div>
   
   <!-- Add more folder icons or other content as desired -->
