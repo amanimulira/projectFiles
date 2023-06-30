@@ -20,7 +20,47 @@
     li {
       margin-bottom: 10px;
     }
+
+       #overlay {
+     
+      top: 0;
+      left: 0;
+      width: 100%;
+           height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    @keyframes blink {
+      0% {
+        background-color: #fff;
+            color: #000;
+      }
+      50% {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+
+
+        #overlay a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 5px;
+      animation: blink 2s infinite;
+    }
   </style>
+  <script>
+    function startApp() {
+      window.location.href = "mySite.html";
+    }
+  </script>
 </head>
 <body>
   <h1>Folder 1</h1>
@@ -30,5 +70,8 @@
     <li>Item 2</li>
     <li>Item 3</li>
   </ul>
+  <div id="overlay">
+  <a href="#" onclick="startApp()">[ Press to Begin ]</a>
+  </div>
 </body>
 </html>
