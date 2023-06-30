@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Folder 1</title>
   <style>
@@ -11,20 +12,20 @@
       margin: 0;
       padding: 0;
     }
-    
+
     ul {
       list-style-type: none;
-      padding:20px;
+      padding: 20px;
     }
-    
+
     li {
       margin-bottom: 10px;
     }
 
     .collapsible {
-	cursor:pointer;
-	font-size: 32px;
-}
+      cursor: pointer;
+      font-size: 32px;
+    }
 
     .nested {
       display: none;
@@ -37,36 +38,38 @@
       display: block;
     }
 
-       #overlay {
-     
+    #overlay {
+
       top: 0;
       left: 0;
       width: 100%;
-           height: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 999;
     }
+
     @keyframes blink {
       0% {
         background-color: #fff;
-            color: #000;
+        color: #000;
       }
+
       50% {
         background-color: #000;
         color: #fff;
       }
     }
 
-      h1 {
+    h1 {
       font-size: 162px;
       margin-top: 100px;
       margin-bottom: 20px;
     }
 
 
-        #overlay a {
+    #overlay a {
       display: inline-block;
       padding: 10px 20px;
       background-color: #fff;
@@ -82,11 +85,11 @@
     function startApp() {
       window.location.href = "homescreen.html";
     }
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const collapsibleItems = document.querySelectorAll('.collapsible');
 
-      collapsibleItems.forEach(function(item) {
-        item.addEventListener('click', function() {
+      collapsibleItems.forEach(function (item) {
+        item.addEventListener('click', function () {
           this.classList.toggle('active');
           const nestedList = this.nextElementSibling;
           nestedList.classList.toggle('active');
@@ -95,8 +98,9 @@
     });
   </script>
 </head>
+
 <body>
- <h1>Machine Learning</h1> 
+  <h1>Machine Learning</h1>
   <ul>
     <li>
       <span class="collapsible">Supervised</span>
@@ -104,7 +108,7 @@
 
         <li>
           <span class="collapsible">Classification - [ Predicting a categorical variable. ]</span>
- <ul class="nested">
+          <ul class="nested">
             <li>Naive bayes</li>
             <li>K-nearest neighbor</li>
             <li>Support vector machines (SVM)</li>
@@ -119,33 +123,71 @@
             <li>Linear regression</li>
             <li>Support vector machines (SVM)</li>
             <li>Logistic regression</li>
-            <li>Random forest</li>
+            <li><a href="Regression/randomForest.html">Random forest</a></li>
           </ul>
         </li>
       </ul>
     </li>
     <li><span class="collapsible">Unsupervised</span>
-<ul class="nested">
-<li>
+      <ul class="nested">
+        <li>
           <span class="collapsible">Clustering - [ Identify a pattern or group of similar objects. ]</span>
 
         </li>
         <li>
-          <span class="collapsible">Dimension Reduction - [ Reduces the number of variables being considered to find the exact information required. ]</span>
+          <span class="collapsible">Dimension Reduction - [ Reduces the number of variables being considered to find the
+            exact information required. ]</span>
           <ul class="nested">
             <li>Sub-subitem 1</li>
             <li>Sub-subitem 2</li>
           </ul>
         </li>
+        </ul>
+    </li>
+    <li><span class="collapsible">Deep Learning ( neural networks )</span>
+      <ul class="nested">
+
+        <li>
+          <span class="collapsible">Artifical Neural Networks</span>
+          <ul class="nested">
+            <li>Recurrent Neural Network (RNN)</li>
+            <li>Long / Short Term Memory (LSTM)</li>
+            <li>Gated Recurrent Unit (GRU)</li>
+            <li> Auto Encoder (AE)</li>
+
+            <li> Variational Autoencoder (VAE)</li>
+            <li> Denoising Autoencoder (DAE)</li>
+            <li> Sparse Autoencoder (SAE)</li>
+            <li> Markov Chain (MC)</li>
+            <li> Hopfield Network (HN)</li>
+            <li> Boltzmann Machine (BM)</li>
+            <li> Restricted Boltzmann Machine (RBM)</li>
+            <li> Deep Belief Network (DBN) </li>
+            <li> Deep Convolutional Network (DCN) </li>
+            <li> Deconvolutional Neural Networks (DN)</li>
+            <li> Deep Convolutional Inverse Graphics Network (DC-IGN)</li>
+            <li> Generative Adversarial Network (GAN)</li>
+            <li> Liquid State Machine (LSM)</li>
+            <li> Extreme Learning Machine (ELMi)</li>
+            <li> Echo State Network (ESN)</li>
+            <li> Deep Residual Network (DRN)</li>
+            <li> Kohonen Networks (KN)</li>
+            <li> Support Vector Machines (SVM)</li>
+            <li> Neural Turing Machine (NTM)</li>
+          </ul>
+
+        </li>
+
       </ul>
     </li>
 
-</ul>
-</li>
+  </ul>
+
 
   </ul>
   <div id="overlay">
-  <a href="#" onclick="startApp()">[ Back ]</a>
+    <a href="#" onclick="startApp()">[ Back ]</a>
   </div>
 </body>
+
 </html>
