@@ -7,18 +7,34 @@
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      text-align: center;
+      text-align: justify;
       margin: 0;
       padding: 0;
     }
     
     ul {
       list-style-type: none;
-      padding: 0;
+      padding:20px;
     }
     
     li {
       margin-bottom: 10px;
+    }
+
+    .collapsible {
+	cursor:pointer;
+	font-size: 32px;
+}
+
+    .nested {
+      display: none;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1px solid #fff;
+    }
+
+    .active {
+      display: block;
     }
 
        #overlay {
@@ -66,15 +82,59 @@
     function startApp() {
       window.location.href = "homescreen.html";
     }
+    document.addEventListener('DOMContentLoaded', function() {
+      const collapsibleItems = document.querySelectorAll('.collapsible');
+
+      collapsibleItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+          this.classList.toggle('active');
+          const nestedList = this.nextElementSibling;
+          nestedList.classList.toggle('active');
+        });
+      });
+    });
   </script>
 </head>
 <body>
-  <h1>Folder 1</h1>
-  
+ <h1>Machine Learning</h1> 
   <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
+    <li>
+      <span class="collapsible">Supervised</span>
+      <ul class="nested">
+
+        <li>
+          <span class="collapsible">Classification - [ Predicting a categorical variable. ]</span>
+
+        </li>
+        <li>
+          <span class="collapsible">Regression - [ Predicting a numeric variable. ]</span>
+
+          <ul class="nested">
+            <li>Sub-subitem 1</li>
+            <li>Sub-subitem 2</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><span class="collapsible">Unsupervised</span>
+<ul class="nested">
+<li>
+          <span class="collapsible">Clustering - [ Identify a pattern or group of similar objects. ]</span>
+
+        </li>
+        <li>
+          <span class="collapsible">Dimension Reduction - [ Reduces the number of variables being considered to find the exact information required. ]</span>
+          <ul class="nested">
+            <li>Sub-subitem 1</li>
+            <li>Sub-subitem 2</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+</ul>
+</li>
+
   </ul>
   <div id="overlay">
   <a href="#" onclick="startApp()">[ Back ]</a>
